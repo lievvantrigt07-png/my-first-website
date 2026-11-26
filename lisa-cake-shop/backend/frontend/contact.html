@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Lisa Cake Shop</title>
+  <meta name="cake-shop-api-url" content="http://localhost:3000">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
+    <div class="container"><a class="navbar-brand brand" href="index.html">Lisa <span>Cake Shop</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="siteNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">Our Story</a></li><li class="nav-item"><a class="nav-link" href="menu.html">Cakes</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
+      </ul></div>
+    </div>
+  </nav>
+  <main>
+    <header class="page-header"><div class="container"><p class="eyebrow">WE'D LOVE TO HEAR FROM YOU</p><h1>Let's talk cake</h1><p class="section-intro">Have a question or an idea for a celebration? Get in touch.</p></div></header>
+    <section class="section-space"><div class="container"><div class="row g-5">
+      <div class="col-lg-5"><h2 class="section-title">Contact details</h2><p>Replace the sample details below with the real contact information for your shop.</p>
+        <div class="contact-detail"><strong>Email</strong><br><span>your-email@example.com</span></div>
+        <div class="contact-detail"><strong>Phone</strong><br><span> Add your phone number</span></div>
+        <div class="contact-detail"><strong>Location</strong><br><span>Add your shop address or town</span></div>
+      </div>
+      <div class="col-lg-7"><div class="form-panel"><h2 class="h3 mb-3">Send us a message</h2>
+        <form id="contactForm">
+          <div class="mb-3"><label for="customerName" class="form-label">Your name</label><input id="customerName" name="name" class="form-control" type="text" placeholder="Name" maxlength="120" required></div>
+          <div class="mb-3"><label for="customerEmail" class="form-label">Email address</label><input id="customerEmail" name="email" class="form-control" type="email" placeholder="name@example.com" maxlength="254" required></div>
+          <div class="mb-3"><label for="customerCountry" class="form-label">Country</label><input id="customerCountry" name="country" class="form-control" type="text" placeholder="Country" maxlength="120" required></div>
+          <div class="mb-3"><label for="message" class="form-label">Message</label><textarea id="message" name="message" class="form-control" rows="4" placeholder="How can we help?" maxlength="5000" required></textarea></div>
+          <button class="btn btn-dark rounded-pill px-4" type="submit">Send message</button>
+          <p id="formNote" class="small mt-3 d-none" role="status" aria-live="polite"></p>
+        </form>
+      </div></div>
+    </div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>© 2026 Lisa Cake Shop</span><span>Made with care ♡</span></div></footer>
+  <script defer src="js/api.js"></script>
+  <script defer src="js/contact.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body></html>
