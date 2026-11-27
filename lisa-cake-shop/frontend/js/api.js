@@ -3,6 +3,9 @@ const apiUrl = (
   apiMeta ? apiMeta.content.trim() : 'http://localhost:3000'
 ).replace(/\/+$/, '');
 
+const apiKeyMeta = document.querySelector('meta[name="cake-shop-api-key"]');
+const apiKey = apiKeyMeta ? apiKeyMeta.content.trim() : '';
+
 async function sendMessage(message) {
   let response;
 
@@ -12,6 +15,7 @@ async function sendMessage(message) {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        'x-api-key': apiKey,
       },
       body: JSON.stringify(message),
     });
@@ -50,6 +54,7 @@ async function getCakes() {
       method: 'GET',
       headers: {
         Accept: 'application/json',
+        'x-api-key': apiKey,
       },
     });
   } catch (error) {

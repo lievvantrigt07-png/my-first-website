@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Cake {
+  id          Int    @id @default(autoincrement())
+  name        String @unique @db.VarChar(120)
+  description String
+  price       Float
+  image       String @db.VarChar(16)
+
+  @@map("cakes")
+}
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(120)
+  email     String   @db.VarChar(254)
+  country   String   @db.VarChar(120)
+  message   String
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+
+  @@map("messages")
+}
