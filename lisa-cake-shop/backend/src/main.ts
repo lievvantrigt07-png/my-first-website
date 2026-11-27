@@ -14,10 +14,19 @@ async function bootstrap() {
       process.env.FRONTEND_URL,
     ].filter(Boolean),
     methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'x-api-key'],
+    allowedHeaders: ['Content-Type', 'x-api-key', 'Authorization'],
   });
 
   app.use((req: Request, res: Response, next: NextFunction) => {
+    const requiresApiKey =
+      (req.path === '/cakes' && req.method === 'GET') ||
+      (req.path === '/messages' && req.method === 'POST');
+
+    if (!requiresApiKey) {
+      next();
+      return;
+    }
+
     const expectedApiKey = process.env.API_KEY;
     const receivedApiKey = req.header('x-api-key');
 

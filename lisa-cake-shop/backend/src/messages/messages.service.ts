@@ -15,4 +15,12 @@ export class MessagesService {
     const newMessage = this.messageRepository.create(data);
     return this.messageRepository.save(newMessage);
   }
+
+  findAll() {
+    return this.messageRepository.find({
+      order: {
+        createdAt: 'DESC',
+      },
+    });
+  }
 }

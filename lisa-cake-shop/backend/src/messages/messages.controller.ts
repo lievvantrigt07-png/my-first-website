@@ -1,4 +1,5 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard.js';
 import { CreateMessageDto } from './create-message.dto.js';
 import { MessagesService } from './messages.service.js';
 
@@ -9,5 +10,11 @@ export class MessagesController {
   @Post()
   create(@Body() data: CreateMessageDto) {
     return this.messagesService.create(data);
+  }
+
+  @Get()
+  @UseGuards(JwtAuthGuard)
+  findAll() {
+    return this.messagesService.findAll();
   }
 }
